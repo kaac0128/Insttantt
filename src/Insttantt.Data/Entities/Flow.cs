@@ -1,11 +1,15 @@
 
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+
 namespace Insttantt.Data.Entities
 {
     public class Flow
     {
-        public int FlowId { get; set; }
-        public string? Name { get; set; }
-        public string? Description { get; set; }
-        public ICollection<Step>? Steps { get; set; }
+        [Key]
+        public int FlowID { get; set; }
+        public string FlowName { get; set; }
+
+        public ICollection<Step> Steps { get; set; }
     }
 }
